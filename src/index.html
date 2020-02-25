@@ -23,9 +23,17 @@
         </div>
         <div class="color-container">
             <div class="color-input">
-                <input type="text" id="color-one">
-                <input type="button" id="color-revers">
-                <input type="text" id="color-two">
+                <div class="d-inline-block p-relative">
+                    <input type="text" id="color-one-code" value="#F74A00">
+                    <div class="color" id="color-one"></div>
+                    <input type="text" class="color-stop" id="color-one-stop" value="5%">
+                </div>
+                <button id="color-revers" class="icon-reverse"></button>
+                <div class="d-inline-block p-relative">
+                    <input type="text" id="color-two-code" value="#FFDD00">
+                    <div class="color" id="color-two"></div>
+                    <input type="text" class="color-stop" id="color-two-stop" value="80%">
+                </div>
             </div>
         </div>
         <div class="angle-container"></div>
