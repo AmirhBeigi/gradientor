@@ -3,3 +3,21 @@ body {
     height: 100%;
     background: #FAFBFC;
 }
+
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient-preview {
+    height: 160px;
+    width: 440px;
+    margin: 0 1.5rem;
+    margin-top: 6rem;
+    border-radius: 20px;
+    background: #F74A00;
+    background: linear-gradient(140deg, #F74A00 5%, #FFDD00 80%);
+    box-shadow: 0px 7px 40px 0px #23232333;
+}
