@@ -6,9 +6,11 @@
     <!-- Initial-scale=1.0 for texts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Reset css file -->
-    <link rel="stylesheet" href="../dist/styles/reset.css">
+    <link rel="stylesheet" href="../dist/styles/reset.css" />
+    <!--  iziToast    -->
+    <link rel="stylesheet" href="../dist/iziToast-master/dist/css/iziToast.min.css">
     <!-- Custom css file -->
-    <link rel="stylesheet" href="../dist/styles/main.css">
+    <link rel="stylesheet" href="../dist/styles/main.css" />
     <!-- Custom font icon file -->
     <link rel="stylesheet" href="../dist/fonts/fonticon/css/fonticons_gradientor.css" />
     <!-- Page title -->
@@ -16,31 +18,101 @@
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="gradient-preview-container">
-            <div class="gradient-preview"></div>
-        </div>
-        <div class="color-container">
-            <div class="color-input">
-                <div class="d-inline-block p-relative">
-                    <input type="text" id="color-one-code" value="#F74A00">
-                    <div class="color" id="color-one"></div>
-                    <input type="text" class="color-stop" id="color-one-stop" value="5%">
+    <div class="back-modal">
+        <div class="modal-code" onclick="event.stopPropagation()">
+            <div class="code-editor">
+                <div class="code-editor__column-numbers">1 <br /> 2 <br /> 3 <br /> 4 <br /> 5 <br /> 6 <br /></div>
+                <div class="code-editor__input">
+                    <code class="code-editor__input-code js-code" id="code"></code>
                 </div>
-                <button id="color-revers" class="icon-reverse"></button>
-                <div class="d-inline-block p-relative">
-                    <input type="text" id="color-two-code" value="#FFDD00">
-                    <div class="color" id="color-two"></div>
-                    <input type="text" class="color-stop" id="color-two-stop" value="80%">
+            </div>
+            <div class="control-container">
+                <div class="d-inline-block compatibility-container">
+                    <label class="container">Max Compatibility (IE6+)
+                        <input type="checkbox" id="Compatibility" onclick="showCode()" />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="d-inline-block copy-container">
+                    <button id="copy-button">
+                        <i class="icon-copy copy-icon"></i>Copy to Clipboard
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="angle-container"></div>
     </div>
+    <div class="main_container">
+        <div class="gradient-preview-container">
+            <div class="gradient-preview linear-gradient"></div>
+        </div>
+        <div class="color-container">
+            <div class="color-input">
+                <div class="p-relative color-container-one">
+                    <div class="c-c-o">
+                        <input type="text" id="color-one-code" value="#EB8F68" onchange="colorOne()" />
+                        <div class="color" id="color-one">
+                            <div id="picker-one"></div>
+                        </div>
+                    </div>
+                    <input type="number" class="color-stop" id="color-one-stop" value="5" onkeyup="stopOne()" />
+                </div>
+                <!-- <button id="color-revers" class="icon-reverse"></button> -->
+                <div class="p-relative color-container-two">
+                    <div class="c-c-t">
+                        <input type="text" id="color-two-code" value="#784DE3" onchange="colorTwo()" />
+                        <div class="color" id="color-two">
+                            <div id="picker-two"></div>
+                        </div>
+                    </div>
+                    <input type="number" class="color-stop" id="color-two-stop" value="80" onkeyup="stopTwo()" />
+                </div>
+            </div>
+        </div>
+        <div class="angle-container">
+            <div class="radius-picker-wrap background-radius-picker-wrap">
+                <div class="radius-picker js-radius-picker" data-degree="28">
+                    <i class="radius-picker__handle"></i>
+                    <span class="radius-picker__value"></span>
+                </div>
+            </div>
+        </div>
+        <div class="smile-container">
+            <svg class="Smile" xmlns="http://www.w3.org/2000/svg" width="932.995" height="932.995"
+                viewBox="0 0 932.995 932.995">
+                <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(932.995 341.5) rotate(120)" fill="none"
+                    stroke="#f2f5f8" stroke-linecap="round" stroke-width="75" stroke-dasharray="713 1579">
+                    <circle cx="341.5" cy="341.5" r="341.5" stroke="none" />
+                    <circle cx="341.5" cy="341.5" r="304" fill="none" />
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div id="code-button-container">
+        <button id="toggle-mode-gradient-button"><i class="mode-icon icon-radial-gradient"></i>radial</button>
+        <button id="show-code-button"><i class="icon-code "></i>Code</button>
+    </div>
+    <footer>
+        <div class="d-inline-block logo-container ">
+            <img id="logo" src="../dist/images/logo.png " alt=" " />
+        </div>
+        <div class="d-inline-block social-container ">
+            <a href="https://github.com/amirhbeigi/gradientor" target="blank" class="icon-github icon-social "></a>
+            <a href="https://instagram.com/amirhbeigi" target="blank" class="icon-instagram icon-social "></a>
+        </div>
+    </footer>
 
+
+
+
+    <!-- One of the following themes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
+    <!-- Modern or es5 bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+    <!-- iziToast -->
+    <script src="../dist/iziToast-master/dist/js/iziToast.min.js" type="text/javascript"></script>
     <!-- JS file -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js "></script>
 </body>
 
 </html>
