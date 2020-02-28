@@ -5,3 +5,5 @@
 .icon-instagram:before { content: '\e806'; } /* '' */
 .icon-reverse:before { content: '\e807'; } /* '' */
 .icon-copy:before { content: '\e808'; } /* '' */
+.icon-linear-gradient:before { content: '\e809'; } /* '' */
+.icon-radial-gradient:before { content: '\e80a'; } /* '' */

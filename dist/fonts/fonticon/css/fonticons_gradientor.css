@@ -1,94 +1,64 @@
 @font-face {
-    font-family: 'fonticons_gradientor';
-    src: url('../font/fonticons_gradientor.eot?24369246');
-    src: url('../font/fonticons_gradientor.eot?24369246#iefix') format('embedded-opentype'), url('../font/fonticons_gradientor.woff2?24369246') format('woff2'), url('../font/fonticons_gradientor.woff?24369246') format('woff'), url('../font/fonticons_gradientor.ttf?24369246') format('truetype'), url('../font/fonticons_gradientor.svg?24369246#fonticons_gradientor') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'fonticons_gradientor';
+  src: url('../font/fonticons_gradientor.eot?30236382');
+  src: url('../font/fonticons_gradientor.eot?30236382#iefix') format('embedded-opentype'),
+       url('../font/fonticons_gradientor.woff2?30236382') format('woff2'),
+       url('../font/fonticons_gradientor.woff?30236382') format('woff'),
+       url('../font/fonticons_gradientor.ttf?30236382') format('truetype'),
+       url('../font/fonticons_gradientor.svg?30236382#fonticons_gradientor') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
-
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-
-
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-
-
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fonticons_gradientor';
-    src: url('../font/fonticons_gradientor.svg?24369246#fonticons_gradientor') format('svg');
+    src: url('../font/fonticons_gradientor.svg?30236382#fonticons_gradientor') format('svg');
   }
 }
 */
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-    font-family: "fonticons_gradientor";
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    display: inline-block;
-    text-decoration: inherit;
-    width: 1em;
-    margin-right: .2em;
-    text-align: center;
-    /* opacity: .8; */
-    /* For safety - reset parent styles, that can break glyph codes*/
-    font-variant: normal;
-    text-transform: none;
-    /* fix buttons height, for twitter bootstrap */
-    line-height: 1em;
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    /* margin-left: .2em; */
-    /* you can be more comfortable with increased icons size */
-    /* font-size: 120%; */
-    /* Font smoothing. That was taken from TWBS */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fonticons_gradientor";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
-.icon-github:before {
-    content: '\e803';
-}
-
-
-/* '' */
-
-.icon-color-palette:before {
-    content: '\e804';
-}
-
-
-/* '' */
-
-.icon-code:before {
-    content: '\e805';
-}
-
-
-/* '' */
-
-.icon-instagram:before {
-    content: '\e806';
-}
-
-
-/* '' */
-
-.icon-reverse:before {
-    content: '\e807';
-}
-
-
-/* '' */
-
-.icon-copy:before {
-    content: '\e808';
-}
-
-
-/* '' */
+ 
+.icon-github:before { content: '\e803'; } /* '' */
+.icon-color-palette:before { content: '\e804'; } /* '' */
+.icon-code:before { content: '\e805'; } /* '' */
+.icon-instagram:before { content: '\e806'; } /* '' */
+.icon-reverse:before { content: '\e807'; } /* '' */
+.icon-copy:before { content: '\e808'; } /* '' */
+.icon-linear-gradient:before { content: '\e809'; } /* '' */
+.icon-radial-gradient:before { content: '\e80a'; } /* '' */
