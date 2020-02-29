@@ -18,57 +18,61 @@
 </head>
 
 <body>
-    <div class="back-modal">
-        <div class="modal-code" onclick="event.stopPropagation()">
-            <div class="code-editor">
-                <div class="code-editor__column-numbers">1 <br /> 2 <br /> 3 <br /> 4 <br /> 5 <br /> 6 <br /></div>
+    <div class="back-layer-modal js-back-layer-modal">
+        <div class="back-layer-modal__code-modal" onclick="event.stopPropagation()">
+            <div class="code-modal__code-editor">
+                <div class="code-editor__column-numbers">1 <br /> 2 <br /> 3 <br /> 4 <br /> 5 <br /> 6
+                    <br /></div>
                 <div class="code-editor__input">
                     <code class="code-editor__input-code js-code" id="code"></code>
                 </div>
             </div>
-            <div class="control-container">
-                <div class="d-inline-block compatibility-container">
-                    <label class="container">Max Compatibility (IE6+)
+            <div class="code-modal__editor-options">
+                <div class="d-inline-block editor-options__compatibility">
+                    <label>Compatibility
                         <input type="checkbox" id="Compatibility" onclick="showCode()" />
-                        <span class="checkmark"></span>
+                        <span class="compatibility__checkmark"></span>
                     </label>
                 </div>
-                <div class="d-inline-block copy-container">
-                    <button id="copy-button">
-                        <i class="icon-copy copy-icon"></i>Copy to Clipboard
+                <div class="d-inline-block editor-options__copy">
+                    <button class="copy__copy-button" id="copy-button">
+                        <i class="icon-copy" id="copy-button__icon"></i>Copy to Clipboard
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <div class="main_container">
-        <div class="gradient-preview-container">
-            <div class="gradient-preview linear-gradient"></div>
+        <div class="main_container__gradient-preview-container">
+            <div class="gradient-preview-container__gradient linear-gradient"></div>
         </div>
-        <div class="color-container">
-            <div class="color-input">
-                <div class="p-relative color-container-one">
-                    <div class="c-c-o">
-                        <input type="text" id="color-one-code" value="#EB8F68" onchange="colorOne()" />
-                        <div class="color" id="color-one">
-                            <div id="picker-one"></div>
+        <div class="main_container__color-container">
+            <div class="color-container__color-inputs">
+                <div class="p-relative color-inputs__first-color">
+                    <div class="first-color__color-picker">
+                        <input type="text" class="color-picker__first-code" id="first-color-code" value="#EB8F68"
+                            onchange="setColor('first')" />
+                        <div class="p-absolute color-picker__first">
+                            <div id="picker-first"></div>
                         </div>
                     </div>
-                    <input type="number" class="color-stop" id="color-one-stop" value="5" onkeyup="stopOne()" />
+                    <input type="number" class="color-stop" id="color-first-stop" value="5"
+                        onkeyup="stopColor('first')" />
                 </div>
-                <!-- <button id="color-revers" class="icon-reverse"></button> -->
-                <div class="p-relative color-container-two">
-                    <div class="c-c-t">
-                        <input type="text" id="color-two-code" value="#784DE3" onchange="colorTwo()" />
-                        <div class="color" id="color-two">
-                            <div id="picker-two"></div>
+                <div class="p-relative color-inputs__second-color">
+                    <div class="second-color__color-picker">
+                        <input type="text" class="color-picker__second-code" id="second-color-code" value="#784DE3"
+                            onchange="setColor('second')" />
+                        <div class="p-absolute color-picker__second">
+                            <div id="picker-second"></div>
                         </div>
                     </div>
-                    <input type="number" class="color-stop" id="color-two-stop" value="80" onkeyup="stopTwo()" />
+                    <input type="number" class="color-stop" id="color-second-stop" value="80"
+                        onkeyup="stopColor('second')" />
                 </div>
             </div>
         </div>
-        <div class="angle-container">
+        <div class="color-container__angle">
             <div class="radius-picker-wrap background-radius-picker-wrap">
                 <div class="radius-picker js-radius-picker" data-degree="28">
                     <i class="radius-picker__handle"></i>
