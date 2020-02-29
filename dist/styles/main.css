@@ -3,9 +3,19 @@ body {
     background: #fafbfc;
     overflow-x: hidden;
 }
+@font-face {
+    font-family: 'Nunito';
+    src: url('/dist/fonts/Nunito-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'ubuntu mono';
+    src: url('/dist/fonts/UbuntuMono-Regular.ttf');
+}
+
 
 * {
-    font-family: Nunito;
+    font-family: 'Nunito';
     transition: 1s;
     transition-property: margin, padding, width, height, transform;
 }
@@ -13,6 +23,8 @@ body {
 a{
     text-decoration: none;
 }
+
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -30,21 +42,22 @@ input[type=number] {
     background: #f74a00;
 }
 
-.gradient-preview-container {
+.main_container__gradient-preview-container {
     display: flex;
     justify-content: center;
 }
 
-.gradient-preview {
+.gradient-preview-container__gradient {
     height: 160px;
     width: 440px;
     margin: 0 1.5rem;
     margin-top: 4rem;
     border-radius: 20px;
     box-shadow: 0px 7px 40px 0px #2323231f;
+    background:#EB8F68;
 }
 
-.color-container {
+.main_container__color-container {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
@@ -52,20 +65,20 @@ input[type=number] {
     position: relative;
 }
 
-.angle-container {
+.color-container__angle {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
 }
 
-.color-input {
+.color-container__color-inputs {
     width: 27rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#color-one-code {
+.color-picker__first-code {
     display: inline-block;
     text-align: center;
     width: 100px;
@@ -78,7 +91,7 @@ input[type=number] {
     font-size: 1rem;
 }
 
-#color-two-code {
+.color-picker__second-code {
     display: inline-block;
     text-align: center;
     width: 100px;
@@ -91,7 +104,7 @@ input[type=number] {
     font-size: 1rem;
 }
 
-.color-container-one {
+.color-inputs__first-color {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -99,7 +112,7 @@ input[type=number] {
     justify-content: center;
 }
 
-.color-container-two {
+.color-inputs__second-color {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -107,32 +120,24 @@ input[type=number] {
     justify-content: center;
 }
 
-.color {
+.p-absolute {
     position: absolute;
 }
 
-#color-one {
+.color-picker__first {
     top: 4px;
     left: 5px;
 }
 
-#color-two {
+.color-picker__second {
     top: 4px;
     right: 5px;
 }
 
-#color-revers {
-    background-color: transparent;
-    border: none;
-    margin: 0.5rem 2rem;
-    vertical-align: top;
-    color: #6392c0;
-    font-size: 1.2rem;
-}
 
 .color-stop {
     display: block;
-    margin: 0 38px;
+    margin: 0 33px;
     width: 50px;
     height: 40px;
     text-align: center;
@@ -270,7 +275,7 @@ footer {
     margin-left: 0.5rem;
     color: #9aa5b1;
 }
-
+/* 
 @media only screen and (max-width: 511px) {
     .color-input {
         display: flex;
@@ -285,8 +290,8 @@ footer {
     #code-button {
         margin: -20px auto 20px auto;
     }
-}
-
+} */
+/* 
 @media only screen and (max-width: 377px) {
     #color-one-code,
     #color-two-code {
@@ -299,9 +304,9 @@ footer {
         margin: 0 0.5rem;
         margin-top: 1rem;
     }
-}
+} */
 
-.back-modal {
+.back-layer-modal {
     display: none;
     justify-content: center;
     align-items: center;
@@ -331,7 +336,7 @@ footer {
 }
   
 
-.modal-code {
+.back-layer-modal__code-modal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,16 +344,16 @@ footer {
     width: 55%;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0px 7px 50px 0px #2323231f;
+    box-shadow: 0px 7px 50px 0px #23232341;
 }
 
-.code-editor {
+.code-modal__code-editor {
     font-family: 'ubuntu mono';
     display: flex;
     background-color: #161A42;
+    width: 98%;
     height: 11rem;
     border-radius: 15px;
-    width: 98%;
     margin-top: 0.5rem;
     color: tomato;
     overflow: hidden;
@@ -379,21 +384,21 @@ footer {
     color: #00BCD4;
 }
 
-.control-container {
+.code-modal__editor-options {
     display: flex;
     align-items: center;
     width: 95%;
     margin: 0.5rem;
 }
 
-.copy-container {
+.editor-options__copy {
     display: flex;
     float: right;
     justify-content: flex-end;
     width: 50%;
 }
 
-#copy-button {
+.copy__copy-button {
     display: flex;
     align-items: center;
     padding: 0.3rem 1rem;
@@ -404,11 +409,11 @@ footer {
     color: #232543;
 }
 
-.copy-icon {
+#copy-button__icon {
     font-size: 1.2rem;
 }
 
-.compatibility-container {
+.editor-options__compatibility {
     font-family: Nunito;
     display: flex;
     float: left;
@@ -426,7 +431,7 @@ footer {
 
 /* Hide the browser's default checkbox */
 
-.modal-code input {
+input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -437,7 +442,7 @@ footer {
 
 /* Create a custom checkbox */
 
-.checkmark {
+.compatibility__checkmark {
     cursor: pointer;
     position: absolute;
     top: -6px;
@@ -451,14 +456,14 @@ footer {
 
 /* When the checkbox is checked, add a blue background */
 
-.compatibility-container input:checked~.checkmark {
+.editor-options__compatibility input:checked~.compatibility__checkmark {
     background-color: #19206e;
 }
 
 
 /* Create the checkmark/indicator (hidden when not checked) */
 
-.checkmark:after {
+.compatibility__checkmark:after {
     content: "";
     position: absolute;
     display: none;
@@ -467,14 +472,14 @@ footer {
 
 /* Show the checkmark when checked */
 
-.compatibility-container input:checked~.checkmark:after {
+.editor-options__compatibility input:checked~.compatibility__checkmark:after {
     display: block;
 }
 
 
 /* Style the checkmark/indicator */
 
-.compatibility-container .checkmark:after {
+.editor-options__compatibility .compatibility__checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
