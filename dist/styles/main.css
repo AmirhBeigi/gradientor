@@ -1,7 +1,10 @@
 body {
-    height: 100%;
+    height: 100vh;
     background: #fafbfc;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 @font-face {
     font-family: 'Nunito';
