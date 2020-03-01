@@ -8,12 +8,12 @@ body {
 }
 @font-face {
     font-family: 'Nunito';
-    src: url('/dist/fonts/Nunito-Bold.ttf');
+    src: url('../fonts/Nunito-Bold.ttf');
 }
 
 @font-face {
     font-family: 'ubuntu mono';
-    src: url('/dist/fonts/UbuntuMono-Regular.ttf');
+    src: url('../fonts/UbuntuMono-Regular.ttf');
 }
 
 
